@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs-dom/7.0.3/rx.dom.js"></script>
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/tracker-ui.css}"/>
+</head>
+<body>
+<h1 class="text-center">Payments</h1>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-12 panel panel-default">
+            <div class="panel-heading"><h2>Payment simulator</h2></div>
+            <div class="panel-body">
+                <form id="send-transaction-form" action="/payment" title="" method="post">
+                    <label for="creditCardNumber">Credit card number</label>
+                    <input id="creditCardNumber" class="form-control"/>
+                    <label for="amount">Amount</label>
+                    <input id="amount" class="form-control"/>
+                    <input type="submit" id="submitButton"  name="submitButton" value="Submit">
+                </form>
+                <label for="payments">Payment results</label>
+                <ul class="list-group" id="payments"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="ccvalidator.js"></script>
+</body>
+</html>
